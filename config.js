@@ -73,214 +73,108 @@ var CONFIG = {
          icon: 'mdi-home-outline', // home icon
          groups: [
             {
-               title: 'First group',
+               title: 'Lights',
                width: 2,
                height: 3,
                items: [
-                  {
-                     position: [0, 0],
-                     width: 2,
-                     type: TYPES.TEXT_LIST,
-                     id: {}, // using empty object for an unknown id
-                     state: false, // disable state element
-                     list: [
-                        {
-                           title: 'Sun.sun state',
-                           icon: 'mdi-weather-sunny',
-                           value: '&sun.sun.state'
-                        },
-                        {
-                           title: 'Custom',
-                           icon: 'mdi-clock-outline',
-                           value: 'value'
-                        }
-                     ]
-                  },
-                  {
-                     position: [0, 1], // [x, y]
-                     width: 1,
-                     type: TYPES.SENSOR,
-                     id: 'updater.updater',
-                     state: '@attributes.release_notes' // https://github.com/resoai/TileBoard/wiki/Templates
-                  }
-               ]
-            },
 
-            {
-               title: 'Second group',
-               width: 2,
-               height: 3,
-               items: [
-                  {
-                     position: [0, 0],
-                     width: 1,
-                     type: TYPES.SLIDER,
-                     //id: "input_number.volume",
-                     id: {state: 50}, // replace it with real string id
-                     state: false,
-                     title: 'Custom slider',
-                     subtitle: 'Example of subtitle',
-                     slider: {
-                        min: 0,
-                        max: 100,
-                        step: 2,
-                        request: {
-                           type: "call_service",
-                           domain: "input_number",
-                           service: "set_value",
-                           field: "value"
-                        }
-                     }
-                  },
-                  {
-                     position: [1, 0],
-                     width: 1,
-                     type: TYPES.SWITCH,
-                     //id: "switch.lights",
-                     id: {state: 'off'}, // replace it with real string id (e.g. "switch.lights")
-                     state: false,
-                     title: 'Custom switch',
-                     icons: {'off': 'mdi-volume-off', 'on': 'mdi-volume-high'}
-                  },
-                  {
-                     position: [0, 1],
-                     type: TYPES.ALARM,
-                     //id: "alarm_control_panel.home_alarm",
-                     id: { state: 'disarmed' }, // replace it with real string id
-                     title: 'Home Alarm',
-                     icons: {
-                        disarmed: 'mdi-bell-off',
-                        pending: 'mdi-bell',
-                        armed_home: 'mdi-bell-plus',
-                        armed_away: 'mdi-bell',
-                        triggered: 'mdi-bell-ring'
-                     },
-                     states: {
-                        disarmed: 'Disarmed',
-                        pending: 'Pending',
-                        armed_home: 'Armed home',
-                        armed_away: 'Armed away',
-                        triggered: 'Triggered'
-                     }
-                  }
+// ---------------------------------------------
 
-               ]
-            },
+{
+   position: [0, 0],
+   title: 'Lightstrip',
+   subtitle: 'Family Room',
+   id: 'light.hue_lightstrip',
+   type: TYPES.LIGHT,
+   states: { on: "On", off: "Off" },
+   icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+   colorpicker: false
+},
 
-            {
-               title: '',
-               width: 1,
-               height: 3,
-               items: [
-                  {
-                     // please read README.md for more information
-                     // this is just an example
-                     position: [0, 0],
-                     height: 2, // 1 for compact
-                     //classes: ['-compact'],
-                     type: TYPES.WEATHER,
-                     id: {},
-                     state: function () {return 'Sunny'}, // https://github.com/resoai/TileBoard/wiki/Anonymous-functions
-                     icon: 'clear-day',
-                     icons: { 'clear-day': 'clear'},
-                     fields: {
-                        summary: 'Sunny',
-                        temperature: '18',
-                        temperatureUnit: 'C',
-                        windSpeed: '5',
-                        windSpeedUnit: 'kmh',
-                        humidity: '50',
-                        humidityUnit: '%',
-                        list: [
-                           'Feels like 16 C'
-                           /*
-                           'Feels like '
-                              + '&sensor.dark_sky_apparent_temperature.state'
-                              + '&sensor.dark_sky_apparent_temperature.attributes.unit_of_measurement',
+{
+   position: [1, 0],
+   title: 'Desk',
+   subtitle: 'Office',
+   id: 'light.desk',
+   type: TYPES.LIGHT,
+   states: { on: "On", off: "Off" },
+   icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+   colorpicker: false
+},
 
-                           'Pressure '
-                              + '&sensor.dark_sky_pressure.state'
-                              + '&sensor.dark_sky_pressure.attributes.unit_of_measurement',
+{
+   position: [0, 1],
+   title: 'Overhead',
+   subtitle: 'Baseball Room',
+   id: 'light.overhead',
+   type: TYPES.LIGHT,
+   states: { on: "On", off: "Off" },
+   icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+   colorpicker: false
+},
 
-                           '&sensor.dark_sky_precip_probability.state'
-                              + '&sensor.dark_sky_precip_probability.attributes.unit_of_measurement'
-                              + ' chance of rain'
-                           */
-                        ]
-                     }
-                  }
+{
+   position: [1, 1],
+   title: 'Corner',
+   subtitle: 'Master Bedroom',
+   id: 'light.corner_lamp',
+   type: TYPES.LIGHT,
+   states: { on: "On", off: "Off" },
+   icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+   colorpicker: false
+},
 
-               ]
-            }
-         ]
-      },
-      {
-         title: 'Second page',
-         bg: 'images/bg2.png',
-         icon: 'mdi-numeric-2-box-outline',
-         groups: [
-            {
-               title: '',
-               width: 2,
-               height: 3,
-               items: [
-                  {
-                     position: [0, 0],
-                     width: 2,
-                     title: 'Short instruction',
-                     type: TYPES.TEXT_LIST,
-                     id: {}, // using empty object for an unknown id
-                     state: false, // disable state element
-                     list: [
-                        {
-                           title: 'Read',
-                           icon: 'mdi-numeric-1-box-outline',
-                           value: 'README.md'
-                        },
-                        {
-                           title: 'Ask on forum',
-                           icon: 'mdi-numeric-2-box-outline',
-                           value: 'home-assistant.io'
-                        },
-                        {
-                           title: 'Open an issue',
-                           icon: 'mdi-numeric-3-box-outline',
-                           value: 'github.com'
-                        }
-                     ]
-                  },
-                  {
-                     position: [0, 1.5],
-                     width: 1.5,
-                     height: 1,
-                     title: 'My Gauge Title',
-                     subtitle: '',
-                     type: TYPES.GAUGE,
-                     id: 'sensor.my_sample_sensor', // Assign the sensor you want to display on the gauge
-                     value: function(item, entity) {
-                        return entity.state;
-                     },
-                     settings: {
-                        size: 200, // Defaults to 50% of either height or width, whichever is smaller
-                        type: 'full', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
-                        min: 0, // Defaults to 0
-                        max: 25000, // Defaults to 100
-                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
-                        thick: 8, // Defaults to 6
-                        label: 'My Gauge', // Defaults to undefined
-                        append: '@attributes.unit_of_measurement', // Defaults to undefined
-                        prepend: '$', // Defaults to undefined
-                        duration: 1500, // Defaults to 1500ms
-                        thresholds: { 0: { color: 'green'}, 80: { color: 'red' } }, // Defaults to undefined
-                        labelOnly: false, // Defaults to false
-                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
-                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
-                     },
-                  },
-               ]
-            },
-         ]
-      }
-   ],
-}
+{
+   position: [0, 2],
+   type: TYPES.SENSOR_ICON,
+   title: 'Slider',
+   id: 'binary_sensor.ecolink_door_window_sensor_sensor',
+   states: {
+      on: "OPEN",
+      off: "closed",
+   },
+   icons: {
+      on: 'mdi-bell',
+      off: 'mdi-bell-off',
+   },
+},
+
+{
+   position: [1, 2],
+   width: 1,
+   height: 1,
+   title: 'Slider Sensor Battery',
+   subtitle: '',
+   type: TYPES.GAUGE,
+   id: 'sensor.ecolink_door_window_sensor_battery_level',
+   value: function(item, entity){
+      return entity.state;
+   },
+   settings: {
+      size: 100, // Defaults to 50% of either height or width, whichever is smaller
+      type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
+      min: 0, // Defaults to 0
+      max: 100, // Defaults to 100
+      cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
+      thick: 6, // Defaults to 6
+      //label: 'Door Sensor Battery', // Defaults to undefined
+      append: '@attributes.unit_of_measurement', // Defaults to undefined
+      //prepend: '%', // Defaults to undefined
+      duration: 1500, // Defaults to 1500ms
+      thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
+      labelOnly: false, // Defaults to false
+      foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
+      backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
+      fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
+   },
+},
+
+
+// ---------------------------------------------
+                ]        // end of items for Lights
+            },           // end of Lights group on Main page
+
+         ]               // end of groups on Main page
+      }                  // end of Main Page
+   ],                    // end of pages
+}                        // end of CONFIG
