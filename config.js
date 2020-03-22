@@ -1,4 +1,9 @@
 
+//
+// color codes - https://www.rapidtables.com/web/color/green-color.html
+//               https://www.rapidtables.com/web/color/red-color.html
+//
+
 var CONFIG = {
    customTheme: null, // CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95
    transition: TRANSITIONS.ANIMATED_GPU, //ANIMATED or SIMPLE (better perfomance)
@@ -82,6 +87,11 @@ var CONFIG = {
                         on: 'mdi-bell',
                         off: 'mdi-bell-off',
                      },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
                   },
 
                   {
@@ -147,7 +157,7 @@ var CONFIG = {
                         append: '@attributes.unit_of_measurement', // Defaults to undefined
                         //prepend: '%', // Defaults to undefined
                         duration: 1500, // Defaults to 1500ms
-                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
+                        thresholds: { 0: { color: 'cyan'},  40: { color: 'gold'}, 55: { color: 'lightgreen'}, 80: { color: 'red'} },  // Defaults to undefined
                         labelOnly: false, // Defaults to false
                         foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
                         backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
@@ -180,7 +190,12 @@ var CONFIG = {
                      type: TYPES.LIGHT,
                      states: { on: "On", off: "Off" },
                      icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
-                     colorpicker: false
+                     colorpicker: false,
+                     customStyles: function(item, entity){
+                        if (entity.state === 'on') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'off') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#708090',};}
+                    }
                   },
                   
                   {
@@ -191,7 +206,12 @@ var CONFIG = {
                      type: TYPES.LIGHT,
                      states: { on: "On", off: "Off" },
                      icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
-                     colorpicker: false
+                     colorpicker: false,
+                     customStyles: function(item, entity){
+                        if (entity.state === 'on') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'off') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#708090',};}
+                    }
                   },
                   
                   {
@@ -202,7 +222,12 @@ var CONFIG = {
                      type: TYPES.LIGHT,
                      states: { on: "On", off: "Off" },
                      icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
-                     colorpicker: false
+                     colorpicker: false,
+                     customStyles: function(item, entity){
+                        if (entity.state === 'on') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'off') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#708090',};}
+                    }
                   },
                   
                   {
@@ -213,7 +238,12 @@ var CONFIG = {
                      type: TYPES.LIGHT,
                      states: { on: "On", off: "Off" },
                      icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
-                     colorpicker: false
+                     colorpicker: false,
+                     customStyles: function(item, entity){
+                        if (entity.state === 'on') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'off') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#808080',};}
+                    }
                   },
 
                 ]        // end of items for Lights group
