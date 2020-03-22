@@ -55,66 +55,14 @@ var CONFIG = {
    },*/
 
    pages: [
+
+        // ------------ page-1 is the home page ---------------
       {
          title: 'Main page',
          bg: 'images/bg1.jpeg',
          icon: 'mdi-home-outline', // home icon
          groups: [
 
-            {
-               title: 'Lights',
-               width: 2,
-               height: 3,
-               items: [
-
-                  {
-                     position: [0, 0],
-                     title: 'Lightstrip',
-                     subtitle: 'Family Room',
-                     id: 'light.hue_lightstrip',
-                     type: TYPES.LIGHT,
-                     states: { on: "On", off: "Off" },
-                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
-                     colorpicker: false
-                  },
-                  
-                  {
-                     position: [1, 0],
-                     title: 'Desk',
-                     subtitle: 'Office',
-                     id: 'light.desk',
-                     type: TYPES.LIGHT,
-                     states: { on: "On", off: "Off" },
-                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
-                     colorpicker: false
-                  },
-                  
-                  {
-                     position: [0, 1],
-                     title: 'Overhead',
-                     subtitle: 'Baseball Room',
-                     id: 'light.overhead',
-                     type: TYPES.LIGHT,
-                     states: { on: "On", off: "Off" },
-                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
-                     colorpicker: false
-                  },
-                  
-                  {
-                     position: [1, 1],
-                     title: 'Corner',
-                     subtitle: 'Master Bedroom',
-                     id: 'light.corner_lamp',
-                     type: TYPES.LIGHT,
-                     states: { on: "On", off: "Off" },
-                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
-                     colorpicker: false
-                  },
-
-                ]        // end of items for Lights group
-            },           // end of Lights group on Main page
-
-//---
             {
                title: 'Doors and Windows',
                width: 2,
@@ -168,7 +116,9 @@ var CONFIG = {
 
                 ]        // end of items for Doors and Windows
             },           // end of Doors and Windows on Main page
-//---
+   
+        // ------------ page-2 is Hue Lights ---------------
+
             {
                title: 'Weather',
                width: 2,
@@ -207,10 +157,70 @@ var CONFIG = {
 
                 ]        // end of items for Doors and Windows
             },           // end of Doors and Windows on Main page
-//-----
-//-----
 
          ]               // end of groups on Main page
-      }                  // end of Main Page
+      },                  // end of Main Page
+      {
+         title: 'Hue Lights',
+         bg: 'images/bg1.jpeg',
+         icon: 'mdi-lightbulb-on', // home icon
+         groups: [
+
+            {
+               title: 'Lights',
+               width: 2,
+               height: 3,
+               items: [
+
+                  {
+                     position: [0, 0],
+                     title: 'Lightstrip',
+                     subtitle: 'Family Room',
+                     id: 'light.hue_lightstrip',
+                     type: TYPES.LIGHT,
+                     states: { on: "On", off: "Off" },
+                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+                     colorpicker: false
+                  },
+                  
+                  {
+                     position: [1, 0],
+                     title: 'Desk',
+                     subtitle: 'Office',
+                     id: 'light.desk',
+                     type: TYPES.LIGHT,
+                     states: { on: "On", off: "Off" },
+                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+                     colorpicker: false
+                  },
+                  
+                  {
+                     position: [0, 1],
+                     title: 'Overhead',
+                     subtitle: 'Baseball Room',
+                     id: 'light.overhead',
+                     type: TYPES.LIGHT,
+                     states: { on: "On", off: "Off" },
+                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+                     colorpicker: false
+                  },
+                  
+                  {
+                     position: [1, 1],
+                     title: 'Corner',
+                     subtitle: 'Master Bedroom',
+                     id: 'light.corner_lamp',
+                     type: TYPES.LIGHT,
+                     states: { on: "On", off: "Off" },
+                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+                     colorpicker: false
+                  },
+
+                ]        // end of items for Lights group
+            },           // end of Lights group on Lights page
+
+         ]               // end of groups on Main page
+      }                  // end of Lights Page
+
    ],                    // end of pages
 }                        // end of CONFIG
