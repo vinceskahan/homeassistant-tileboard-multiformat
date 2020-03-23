@@ -61,7 +61,7 @@ var CONFIG = {
 
    pages: [
 
-        // ------------ page-1 is the home page ---------------
+      // ------------ page-1 is the home page ---------------
       {
          title: 'Main page',
          bg: 'images/bg1.jpeg',
@@ -73,7 +73,7 @@ var CONFIG = {
                width: 2,
                height: 3,
                items: [
-                  
+
                   {
                      position: [0, 0],
                      type: TYPES.SENSOR_ICON,
@@ -95,46 +95,55 @@ var CONFIG = {
                   },
 
                   {
-                     position: [1, 0],
-                     width: 1,
-                     height: 1,
-                     title: 'Slider Sensor Battery',
-                     subtitle: '',
-                     type: TYPES.GAUGE,
-                     id: 'sensor.ecolink_door_window_sensor_battery_level',
-                     value: function(item, entity){
-                        return entity.state;
+                     position: [0, 1],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Front Door',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
                      },
-                     settings: {
-                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
-                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
-                        min: 0, // Defaults to 0
-                        max: 100, // Defaults to 100
-                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
-                        thick: 6, // Defaults to 6
-                        //label: 'Door Sensor Battery', // Defaults to undefined
-                        append: '@attributes.unit_of_measurement', // Defaults to undefined
-                        //prepend: '%', // Defaults to undefined
-                        duration: 1500, // Defaults to 1500ms
-                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
-                        labelOnly: false, // Defaults to false
-                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
-                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
+                     icons: {
+                        on: 'mdi-bell',
+                        off: 'mdi-bell-off',
                      },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
                   },
 
-                ]        // end of items for Doors and Windows
-            },           // end of Doors and Windows on Main page
-   
-        // ------------ page-2 is Hue Lights ---------------
+                  {
+                     position: [1, 0],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Laundry Door',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_3',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-bell',
+                        off: 'mdi-bell-off',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
 
+                ]        // end of items for Doors and Windows group
+            },           // end of Doors and Windows group on Main page
+     
+            //---- second group on this page ----
+ 
             {
                title: 'Weather',
                width: 2,
                height: 3,
                items: [
-                  
                   {
                      position: [0, 0],
                      width: 1,
@@ -164,12 +173,18 @@ var CONFIG = {
                         fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
                      },
                   },
-
                 ]        // end of items for Doors and Windows
-            },           // end of Doors and Windows on Main page
+              },         // end of Weather group
 
-         ]               // end of groups on Main page
-      },                  // end of Main Page
+        ],  // end of groups on Main page
+      },    // end of Main page
+
+
+
+
+
+      // ---------- page 2 is Hue Lights -----------------
+
       {
          title: 'Hue Lights',
          bg: 'images/bg1.jpeg',
@@ -181,7 +196,6 @@ var CONFIG = {
                width: 2,
                height: 3,
                items: [
-
                   {
                      position: [0, 0],
                      title: 'Lightstrip',
@@ -250,7 +264,121 @@ var CONFIG = {
             },           // end of Lights group on Lights page
 
          ]               // end of groups on Main page
-      }                  // end of Lights Page
+      },                  // end of Lights Page
 
-   ],                    // end of pages
-}                        // end of CONFIG
+
+      // -------------- page 3 is battery status ------------------
+
+      {
+         title: 'Battery Status',
+         bg: 'images/bg1.jpeg',
+         icon: 'mdi-battery', // home icon
+         groups: [
+
+            {
+               title: 'Battery State',
+               width: 2,
+               height: 3,
+               items: [
+ 
+                  {
+                     position: [0, 0],
+                     width: 1,
+                     height: 1,
+                     title: 'Kitchen Slider',
+                     subtitle: '',
+                     type: TYPES.GAUGE,
+                     id: 'sensor.ecolink_door_window_sensor_battery_level',
+                     value: function(item, entity){
+                        return entity.state;
+                     },
+                     settings: {
+                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
+                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
+                        min: 0, // Defaults to 0
+                        max: 100, // Defaults to 100
+                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
+                        thick: 6, // Defaults to 6
+                        //label: 'Door Sensor Battery', // Defaults to undefined
+                        append: '@attributes.unit_of_measurement', // Defaults to undefined
+                        //prepend: '%', // Defaults to undefined
+                        duration: 1500, // Defaults to 1500ms
+                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
+                        labelOnly: false, // Defaults to false
+                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
+                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
+                     },
+                  },
+                 
+                  {
+                     position: [0, 1],
+                     width: 1,
+                     height: 1,
+                     title: 'Front Door',
+                     subtitle: '',
+                     type: TYPES.GAUGE,
+                     id: 'sensor.ecolink_door_window_sensor_battery_level_2',
+                     value: function(item, entity){
+                        return entity.state;
+                     },
+                     settings: {
+                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
+                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
+                        min: 0, // Defaults to 0
+                        max: 100, // Defaults to 100
+                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
+                        thick: 6, // Defaults to 6
+                        //label: 'Door Sensor Battery', // Defaults to undefined
+                        append: '@attributes.unit_of_measurement', // Defaults to undefined
+                        //prepend: '%', // Defaults to undefined
+                        duration: 1500, // Defaults to 1500ms
+                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
+                        labelOnly: false, // Defaults to false
+                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
+                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
+                     },
+                  },
+                 
+                  {
+                     position: [1, 0],
+                     width: 1,
+                     height: 1,
+                     title: 'Laundry Door',
+                     subtitle: '',
+                     type: TYPES.GAUGE,
+                     id: 'sensor.ecolink_door_window_sensor_battery_level_3',
+                     value: function(item, entity){
+                        return entity.state;
+                     },
+                     settings: {
+                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
+                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
+                        min: 0, // Defaults to 0
+                        max: 100, // Defaults to 100
+                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
+                        thick: 6, // Defaults to 6
+                        //label: 'Door Sensor Battery', // Defaults to undefined
+                        append: '@attributes.unit_of_measurement', // Defaults to undefined
+                        //prepend: '%', // Defaults to undefined
+                        duration: 1500, // Defaults to 1500ms
+                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
+                        labelOnly: false, // Defaults to false
+                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
+                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
+                     },
+                  },
+                  
+
+                ]        // end of items 
+              }         // end of group
+            ],           // end of groups
+         },              // end of page
+
+
+//-- cut here ---
+
+   ]                    // end of pages
+}                       // end of CONFIG
