@@ -134,6 +134,26 @@ var CONFIG = {
                     }
                   },
 
+                  {
+                     position: [1, 1],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Kitchen Window',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-bell',
+                        off: 'mdi-bell-off',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
                 ]        // end of items for Doors and Windows group
             },           // end of Doors and Windows group on Main page
      
@@ -349,6 +369,36 @@ var CONFIG = {
                      subtitle: '',
                      type: TYPES.GAUGE,
                      id: 'sensor.ecolink_door_window_sensor_battery_level_3',
+                     value: function(item, entity){
+                        return entity.state;
+                     },
+                     settings: {
+                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
+                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
+                        min: 0, // Defaults to 0
+                        max: 100, // Defaults to 100
+                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
+                        thick: 6, // Defaults to 6
+                        //label: 'Door Sensor Battery', // Defaults to undefined
+                        append: '@attributes.unit_of_measurement', // Defaults to undefined
+                        //prepend: '%', // Defaults to undefined
+                        duration: 1500, // Defaults to 1500ms
+                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
+                        labelOnly: false, // Defaults to false
+                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
+                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
+                     },
+                  },
+                  
+                  {
+                     position: [1, 1],
+                     width: 1,
+                     height: 1,
+                     title: 'Kitchen Window',
+                     subtitle: '',
+                     type: TYPES.GAUGE,
+                     id: 'sensor.ecolink_door_window_sensor_battery_level_4',
                      value: function(item, entity){
                         return entity.state;
                      },
