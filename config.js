@@ -8,7 +8,7 @@ var CONFIG = {
    customTheme: null, // CUSTOM_THEMES.TRANSPARENT, CUSTOM_THEMES.MATERIAL, CUSTOM_THEMES.MOBILE, CUSTOM_THEMES.COMPACT, CUSTOM_THEMES.HOMEKIT, CUSTOM_THEMES.WINPHONE, CUSTOM_THEMES.WIN95
    transition: TRANSITIONS.ANIMATED_GPU, //ANIMATED or SIMPLE (better perfomance)
    entitySize: ENTITY_SIZES.NORMAL, //SMALL, BIG are available
-   tileSize: 150,
+   tileSize: 100,
    tileMargin: 6,
    serverUrl: 'http://' + location.hostname + ':8123',
    wsUrl: 'ws://' + location.hostname + ':8123/api/websocket',
@@ -27,7 +27,8 @@ var CONFIG = {
    header: { // https://github.com/resoai/TileBoard/wiki/Header-configuration
       styles: {
          padding: '30px 130px 0',
-         fontSize: '28px'
+         //padding: '10px 130px 0',
+         fontSize: '16px'
       },
       right: [],
       left: [
@@ -71,13 +72,13 @@ var CONFIG = {
             {
                title: 'Doors and Windows',
                width: 2,
-               height: 3,
+               height: 4,
                items: [
 
                   {
                      position: [0, 0],
                      type: TYPES.SENSOR_ICON,
-                     title: 'Kitchen Slider',
+                     title: 'Slider',
                      id: 'binary_sensor.ecolink_door_window_sensor_sensor',
                      states: {
                         on: "OPEN",
@@ -97,7 +98,7 @@ var CONFIG = {
                   {
                      position: [0, 1],
                      type: TYPES.SENSOR_ICON,
-                     title: 'Front Door',
+                     title: 'Front',
                      id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
                      states: {
                         on: "OPEN",
@@ -117,7 +118,7 @@ var CONFIG = {
                   {
                      position: [1, 0],
                      type: TYPES.SENSOR_ICON,
-                     title: 'Laundry Door',
+                     title: 'Laundry',
                      id: 'binary_sensor.ecolink_door_window_sensor_sensor_3',
                      states: {
                         on: "OPEN",
@@ -137,7 +138,7 @@ var CONFIG = {
                   {
                      position: [1, 1],
                      type: TYPES.SENSOR_ICON,
-                     title: 'Kitchen Window',
+                     title: 'Kitchen',
                      id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
                      states: {
                         on: "OPEN",
@@ -162,7 +163,7 @@ var CONFIG = {
             {
                title: 'Weather',
                width: 2,
-               height: 3,
+               height: 4,
                items: [
                 
                 {
@@ -206,7 +207,7 @@ var CONFIG = {
             {
                title: 'Lights',
                width: 2,
-               height: 3,
+               height: 4,
                items: [
                   {
                      position: [0, 0],
