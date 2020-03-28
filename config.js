@@ -28,7 +28,8 @@ var CONFIG = {
       styles: {
          padding: '30px 130px 0',
          //padding: '10px 130px 0',
-         fontSize: '16px'
+         //fontSize: '16px'
+         fontSize: '14px'
       },
       right: [],
       left: [
