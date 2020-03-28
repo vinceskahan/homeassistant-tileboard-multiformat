@@ -1,0 +1,13 @@
+
+/* ------------------------------ */
+/* custom styles to set fonts etc */
+/* ------------------------------ */
+
+/* values used in SENSOR tiles */
+.item-entity--value {
+  font-size: 18px;
+}
+.item-entity--unit {
+  font-size: 14px;
+}
+
