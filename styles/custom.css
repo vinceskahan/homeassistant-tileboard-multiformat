@@ -8,6 +8,11 @@
   font-size: 18px;
 }
 .item-entity--unit {
-  font-size: 14px;
+  font-size: 12px;
 }
-
+.item-title {
+  font-size: 12px;
+}
+.item-subtitle {
+  font-size: 10px;
+}
