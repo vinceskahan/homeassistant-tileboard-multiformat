@@ -135,6 +135,70 @@ var CONFIG = {
                     }
                   },
 
+/* placeholders for new sensors
+
+                  {
+                     position: [0, 2],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'FR Left',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-bell',
+                        off: 'mdi-bell-off',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [1, 2],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'FR Mid',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-bell',
+                        off: 'mdi-bell-off',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [2, 2],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'FR Right',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-bell',
+                        off: 'mdi-bell-off',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+*/
+
                   {
                      position: [1, 1],
                      type: TYPES.SENSOR_ICON,
