@@ -183,7 +183,7 @@ var CONFIG = {
                      else if (entity.state > 32) {return {'backgroundColor': 'darkblue', };}
                      else if (entity.state < 32) {return {'backgroundColor': 'blue',     };}
                      else {return { 'backgroundColor': '#708090',};}
-                  }
+                  },
                 },
 
                 ]        // end of items for Doors and Windows
@@ -312,8 +312,8 @@ var CONFIG = {
  
                   {
                      position: [0, 0],
-                     width: 1,
-                     height: 1,
+                     width: 1.5,
+                     height: 1.5,
                      title: 'Kitchen Slider',
                      subtitle: '',
                      type: TYPES.GAUGE,
@@ -339,11 +339,10 @@ var CONFIG = {
                         fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
                      },
                   },
-                 
                   {
-                     position: [0, 1],
-                     width: 1,
-                     height: 1,
+                     position: [0, 1.5],
+                     width: 1.5,
+                     height: 1.5,
                      title: 'Front Door',
                      subtitle: '',
                      type: TYPES.GAUGE,
@@ -371,9 +370,9 @@ var CONFIG = {
                   },
                  
                   {
-                     position: [1, 0],
-                     width: 1,
-                     height: 1,
+                     position: [1.5, 0],
+                     width: 1.5,
+                     height: 1.5,
                      title: 'Laundry Door',
                      subtitle: '',
                      type: TYPES.GAUGE,
@@ -401,9 +400,9 @@ var CONFIG = {
                   },
                   
                   {
-                     position: [1, 1],
-                     width: 1,
-                     height: 1,
+                     position: [1.5, 1.5],
+                     width: 1.5,
+                     height: 1.5,
                      title: 'Kitchen Window',
                      subtitle: '',
                      type: TYPES.GAUGE,
