@@ -137,7 +137,6 @@ var CONFIG = {
                   },
 
 /* placeholders for new sensors
-
                   {
                      position: [0, 2],
                      type: TYPES.SENSOR_ICON,
@@ -179,7 +178,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [2, 2],
+                     position: [0, 3],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Right',
                      id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
