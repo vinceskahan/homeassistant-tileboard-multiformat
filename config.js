@@ -269,7 +269,23 @@ var CONFIG = {
                      customStyles: function(item, entity){
                         if (entity.state === 'on') {return {'backgroundColor': '#2E8B57',};}
                         else if (entity.state === 'off') {return {'backgroundColor': '#B80D0D',};}
-                        else {return { 'backgroundColor': '#808080',};}
+                        else {return { 'backgroundColor': '#708090',};}
+                    }
+                  },
+                  
+                  {
+                     position: [0, 2],
+                     title: 'Living Room',
+                     subtitle: 'Corner',
+                     id: 'light.big_lamp',
+                     type: TYPES.LIGHT,
+                     states: { on: "On", off: "Off" },
+                     icons: { on: "mdi-lightbulb-on", off: "mdi-lightbulb", },
+                     colorpicker: false,
+                     customStyles: function(item, entity){
+                        if (entity.state === 'on') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'off') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#708090',};}
                     }
                   },
 
