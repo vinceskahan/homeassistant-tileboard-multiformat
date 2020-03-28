@@ -375,125 +375,81 @@ var CONFIG = {
                height: 3,
                items: [
  
-                  {
-                     position: [0, 0],
-                     width: 1.5,
-                     height: 1.5,
-                     title: 'Kitchen Slider',
-                     subtitle: '',
-                     type: TYPES.GAUGE,
-                     id: 'sensor.ecolink_door_window_sensor_battery_level',
-                     value: function(item, entity){
-                        return entity.state;
-                     },
-                     settings: {
-                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
-                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
-                        min: 0, // Defaults to 0
-                        max: 100, // Defaults to 100
-                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
-                        thick: 6, // Defaults to 6
-                        //label: 'Door Sensor Battery', // Defaults to undefined
-                        append: '@attributes.unit_of_measurement', // Defaults to undefined
-                        //prepend: '%', // Defaults to undefined
-                        duration: 1500, // Defaults to 1500ms
-                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
-                        labelOnly: false, // Defaults to false
-                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
-                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
-                     },
+                {
+                   position: [0, 0],
+                   type: TYPES.SENSOR,
+                   title: 'Slider',
+                   id: 'sensor.ecolink_door_window_sensor_battery_level',
+                   state: false, // hidding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 80) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 50) {return {'backgroundColor': 'blue',     };}
+                     else if (entity.state > 25) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 25) {return {'backgroundColor': '#B80D0D',  };}
+                     else {return { 'backgroundColor': '#708090',};}
                   },
-                  {
-                     position: [0, 1.5],
-                     width: 1.5,
-                     height: 1.5,
-                     title: 'Front Door',
-                     subtitle: '',
-                     type: TYPES.GAUGE,
-                     id: 'sensor.ecolink_door_window_sensor_battery_level_2',
-                     value: function(item, entity){
-                        return entity.state;
-                     },
-                     settings: {
-                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
-                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
-                        min: 0, // Defaults to 0
-                        max: 100, // Defaults to 100
-                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
-                        thick: 6, // Defaults to 6
-                        //label: 'Door Sensor Battery', // Defaults to undefined
-                        append: '@attributes.unit_of_measurement', // Defaults to undefined
-                        //prepend: '%', // Defaults to undefined
-                        duration: 1500, // Defaults to 1500ms
-                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
-                        labelOnly: false, // Defaults to false
-                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
-                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
-                     },
+                },
+
+                {
+                   position: [0, 1],
+                   type: TYPES.SENSOR,
+                   title: 'Laundry',
+                   id: 'sensor.ecolink_door_window_sensor_battery_level_2',
+                   state: false, // hidding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 80) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 50) {return {'backgroundColor': 'blue',     };}
+                     else if (entity.state > 25) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 25) {return {'backgroundColor': '#B80D0D',  };}
+                     else {return { 'backgroundColor': '#708090',};}
                   },
-                 
-                  {
-                     position: [1.5, 0],
-                     width: 1.5,
-                     height: 1.5,
-                     title: 'Laundry Door',
-                     subtitle: '',
-                     type: TYPES.GAUGE,
-                     id: 'sensor.ecolink_door_window_sensor_battery_level_3',
-                     value: function(item, entity){
-                        return entity.state;
-                     },
-                     settings: {
-                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
-                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
-                        min: 0, // Defaults to 0
-                        max: 100, // Defaults to 100
-                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
-                        thick: 6, // Defaults to 6
-                        //label: 'Door Sensor Battery', // Defaults to undefined
-                        append: '@attributes.unit_of_measurement', // Defaults to undefined
-                        //prepend: '%', // Defaults to undefined
-                        duration: 1500, // Defaults to 1500ms
-                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
-                        labelOnly: false, // Defaults to false
-                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
-                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
-                     },
+                },
+
+                {
+                   position: [1, 0],
+                   type: TYPES.SENSOR,
+                   title: 'Front Door',
+                   id: 'sensor.ecolink_door_window_sensor_battery_level_3',
+                   state: false, // hidding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 80) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 50) {return {'backgroundColor': 'blue',     };}
+                     else if (entity.state > 25) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 25) {return {'backgroundColor': '#B80D0D',  };}
+                     else {return { 'backgroundColor': '#708090',};}
                   },
-                  
-                  {
-                     position: [1.5, 1.5],
-                     width: 1.5,
-                     height: 1.5,
-                     title: 'Kitchen Window',
-                     subtitle: '',
-                     type: TYPES.GAUGE,
-                     id: 'sensor.ecolink_door_window_sensor_battery_level_4',
-                     value: function(item, entity){
-                        return entity.state;
-                     },
-                     settings: {
-                        size: 100, // Defaults to 50% of either height or width, whichever is smaller
-                        type: 'arch', // Options are: 'full', 'semi', and 'arch'. Defaults to 'full'
-                        min: 0, // Defaults to 0
-                        max: 100, // Defaults to 100
-                        cap: 'round', // Options are: 'round', 'butt'. Defaults to 'butt'
-                        thick: 6, // Defaults to 6
-                        //label: 'Door Sensor Battery', // Defaults to undefined
-                        append: '@attributes.unit_of_measurement', // Defaults to undefined
-                        //prepend: '%', // Defaults to undefined
-                        duration: 1500, // Defaults to 1500ms
-                        thresholds: { 0: { color: 'black'}, },  // Defaults to undefined
-                        labelOnly: false, // Defaults to false
-                        foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
-                        backgroundColor: 'rgba(0, 0, 0, 0.1)', // Defaults to rgba(0, 0, 0, 0.1)
-                        fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
-                     },
+                },
+
+                {
+                   position: [1, 1],
+                   type: TYPES.SENSOR,
+                   title: 'Kitchen Window',
+                   id: 'sensor.ecolink_door_window_sensor_battery_level_4',
+                   state: false, // hidding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 80) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 50) {return {'backgroundColor': 'blue',     };}
+                     else if (entity.state > 25) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 25) {return {'backgroundColor': '#B80D0D',  };}
+                     else {return { 'backgroundColor': '#708090',};}
                   },
-                  
+                },
 
                 ]        // end of items 
               }         // end of group
