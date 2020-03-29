@@ -250,6 +250,47 @@ var CONFIG = {
                   },
                 },
 
+                {
+                   position: [0, 1],
+                   type: TYPES.SENSOR,
+                   title: 'Wind Gust',
+                   id: 'sensor.wind',
+                   unit: 'mph', // override default entity unit
+                   state: false, // hidding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(0) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 40) {return {'backgroundColor': '#B80D0D',  };}
+                     else if (entity.state > 20)      {return {'backgroundColor': 'salmon', };}
+                     else if (entity.state > 10) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state > 0)  {return {'backgroundColor': '#2E8B57',  };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
+                {
+                   position: [0, 2],
+                   type: TYPES.SENSOR,
+                   title: 'Rain',
+                   id: 'sensor.dayrain',
+                   unit: 'in', // override default entity unit
+                   state: false, // hidding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(2) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 2) {return {'backgroundColor': '#B80D0D',     };}
+                     else if (entity.state > 1.0) {return {'backgroundColor': 'salmon', };}
+                     else if (entity.state > 0.7)      {return {'backgroundColor': 'darkblue',  };}
+                     else if (entity.state > 0.3)  {return {'backgroundColor': 'blue',  };}
+                     else if (entity.state > 0)  {return {'backgroundColor': 'green',  };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
                 ]        // end of items for Doors and Windows
               },         // end of Weather group
 
