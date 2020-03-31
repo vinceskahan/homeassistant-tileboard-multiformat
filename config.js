@@ -136,12 +136,12 @@ var CONFIG = {
                     }
                   },
 
-/* placeholders for new sensors
+
                   {
                      position: [0, 2],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Left',
-                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_7',
                      states: {
                         on: "OPEN",
                         off: "closed",
@@ -161,7 +161,7 @@ var CONFIG = {
                      position: [1, 2],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Mid',
-                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_5',
                      states: {
                         on: "OPEN",
                         off: "closed",
@@ -181,7 +181,7 @@ var CONFIG = {
                      position: [0, 3],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Right',
-                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_4',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_6',
                      states: {
                         on: "OPEN",
                         off: "closed",
@@ -197,7 +197,7 @@ var CONFIG = {
                     }
                   },
 
-*/
+
 
                   {
                      position: [1, 1],
@@ -236,7 +236,7 @@ var CONFIG = {
                    title: 'Outdoor',
                    id: 'sensor.outtemp',
                    unit: 'F', // override default entity unit
-                   state: false, // hidding state
+                   state: false, // hiding state
                    filter: function (value) { // optional
                       var num = parseFloat(value);
                       return num && !isNaN(num) ? num.toFixed(1) : value;
@@ -256,7 +256,7 @@ var CONFIG = {
                    title: 'Wind Gust',
                    id: 'sensor.wind',
                    unit: 'mph', // override default entity unit
-                   state: false, // hidding state
+                   state: false, // hiding state
                    filter: function (value) { // optional
                       var num = parseFloat(value);
                       return num && !isNaN(num) ? num.toFixed(0) : value;
@@ -276,7 +276,7 @@ var CONFIG = {
                    title: 'Rain',
                    id: 'sensor.dayrain',
                    unit: 'in', // override default entity unit
-                   state: false, // hidding state
+                   state: false, // hiding state
                    filter: function (value) { // optional
                       var num = parseFloat(value);
                       return num && !isNaN(num) ? num.toFixed(2) : value;
@@ -317,7 +317,7 @@ var CONFIG = {
                   {
                      position: [0, 0],
                      title: 'Lightstrip',
-                     subtitle: 'Family Room',
+                     subtitle: 'FR',
                      id: 'light.hue_lightstrip',
                      type: TYPES.LIGHT,
                      states: { on: "On", off: "Off" },
@@ -420,7 +420,7 @@ var CONFIG = {
                    type: TYPES.SENSOR,
                    title: 'Slider',
                    id: 'sensor.ecolink_door_window_sensor_battery_level',
-                   state: false, // hidding state
+                   state: false, // hiding state
                    filter: function (value) { // optional
                       var num = parseFloat(value);
                       return num && !isNaN(num) ? num.toFixed(1) : value;
@@ -439,7 +439,7 @@ var CONFIG = {
                    type: TYPES.SENSOR,
                    title: 'Laundry',
                    id: 'sensor.ecolink_door_window_sensor_battery_level_2',
-                   state: false, // hidding state
+                   state: false, // hiding state
                    filter: function (value) { // optional
                       var num = parseFloat(value);
                       return num && !isNaN(num) ? num.toFixed(1) : value;
@@ -458,7 +458,7 @@ var CONFIG = {
                    type: TYPES.SENSOR,
                    title: 'Front Door',
                    id: 'sensor.ecolink_door_window_sensor_battery_level_3',
-                   state: false, // hidding state
+                   state: false, // hiding state
                    filter: function (value) { // optional
                       var num = parseFloat(value);
                       return num && !isNaN(num) ? num.toFixed(1) : value;
@@ -477,7 +477,64 @@ var CONFIG = {
                    type: TYPES.SENSOR,
                    title: 'Kitchen Window',
                    id: 'sensor.ecolink_door_window_sensor_battery_level_4',
-                   state: false, // hidding state
+                   state: false, // hiding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 80) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 50) {return {'backgroundColor': 'blue',     };}
+                     else if (entity.state > 25) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 25) {return {'backgroundColor': '#B80D0D',  };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
+                {
+                   position: [0, 2],
+                   type: TYPES.SENSOR,
+                   title: 'FR Left',
+                   id: 'sensor.ecolink_door_window_sensor_battery_level_5',
+                   state: false, // hiding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 80) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 50) {return {'backgroundColor': 'blue',     };}
+                     else if (entity.state > 25) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 25) {return {'backgroundColor': '#B80D0D',  };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
+                {
+                   position: [1, 2],
+                   type: TYPES.SENSOR,
+                   title: 'FR Mid',
+                   id: 'sensor.ecolink_door_window_sensor_battery_level_6',
+                   state: false, // hiding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 80) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 50) {return {'backgroundColor': 'blue',     };}
+                     else if (entity.state > 25) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 25) {return {'backgroundColor': '#B80D0D',  };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
+                {
+                   position: [0, 3],
+                   type: TYPES.SENSOR,
+                   title: 'FR Right',
+                   id: 'sensor.ecolink_door_window_sensor_battery_level_7',
+                   state: false, // hiding state
                    filter: function (value) { // optional
                       var num = parseFloat(value);
                       return num && !isNaN(num) ? num.toFixed(1) : value;
