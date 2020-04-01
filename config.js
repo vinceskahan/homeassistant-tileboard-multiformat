@@ -141,7 +141,7 @@ var CONFIG = {
                      position: [0, 2],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Left',
-                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_7',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_5',
                      states: {
                         on: "OPEN",
                         off: "closed",
@@ -161,7 +161,7 @@ var CONFIG = {
                      position: [1, 2],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Mid',
-                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_5',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_6',
                      states: {
                         on: "OPEN",
                         off: "closed",
@@ -181,7 +181,7 @@ var CONFIG = {
                      position: [0, 3],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Right',
-                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_6',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_7',
                      states: {
                         on: "OPEN",
                         off: "closed",
