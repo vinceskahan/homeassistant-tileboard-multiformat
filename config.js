@@ -549,7 +549,8 @@ var CONFIG = {
                 },
 
                 ]        // end of items 
-              }         // end of group
+              },        // end of group
+
             ],           // end of groups
          },              // end of page
 
