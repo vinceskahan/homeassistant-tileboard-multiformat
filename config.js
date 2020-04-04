@@ -67,7 +67,7 @@ var CONFIG = {
       {
          title: 'Main page',
          bg: 'images/bg1.jpeg',
-         icon: 'mdi-home-outline', // home icon
+         icon: 'mdi-home',
          groups: [
 
             {
@@ -82,12 +82,10 @@ var CONFIG = {
                      type: TYPES.CUSTOM,
                      id: { },
                      title: 'Doors',
-                     icons: {
-                        1: 'mdi-numeric-one-circle',
-                        2: 'mdi-numeric-two-circle',
-                        3: 'mdi-numeric-three-circle',
-                        4: 'mdi-numeric-four-circle'
+                     action: function(e) {
+                       window.openPage(CONFIG.pages[1]);
                      },
+                    // set the state to 'ok' if all doors are closed
                      state: function() {
                         var sensors = [
                                     "&binary_sensor.ecolink_door_window_sensor_sensor.state", 
@@ -100,6 +98,7 @@ var CONFIG = {
                         }
                         if (count > 0) { return count; } else { return "ok"; }
                      },
+                     // set the background red if anything is open
                      customStyles: function(item, entity){
                         var sensors = [
                                     "&binary_sensor.ecolink_door_window_sensor_sensor.state", 
@@ -114,6 +113,7 @@ var CONFIG = {
                         else if (count == 0) {return { 'backgroundColor': '#2E8B57', };}
                         else                 {return { 'backgroundColor': '#708090', };}
                       },
+                     // show an alarm bell icon if anything is open
                      icons: function(item, entity){
                         var sensors = [
                                     "&binary_sensor.ecolink_door_window_sensor_sensor.state", 
@@ -128,23 +128,74 @@ var CONFIG = {
                      },
                   },
 
-                  // ---- this gives a total of windows open         ----
-                  // ---- press on the icon to open the windows page ----
-
+                  // ---- this gives a total of doors open ----
                   {
                      position: [0, 1],
                      type: TYPES.CUSTOM,
                      id: { },
-                     title: 'Lights',
+                     title: 'Windows',
                      action: function(e) {
                        window.openPage(CONFIG.pages[1]);
                      },
-                     icons: {
-                        1: 'mdi-numeric-one-circle',
-                        2: 'mdi-numeric-two-circle',
-                        3: 'mdi-numeric-three-circle',
-                        4: 'mdi-numeric-four-circle'
+                    // set the state to 'ok' if all doors are closed
+                     state: function() {
+                        var sensors = [
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_4.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_5.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_6.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_7.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0) { return count; } else { return "ok"; }
                      },
+                     // set the background red if anything is open
+                     customStyles: function(item, entity){
+                        var sensors = [
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_4.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_5.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_6.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_7.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0)       {return { 'backgroundColor': '#B80D0D', };}
+                        else if (count == 0) {return { 'backgroundColor': '#2E8B57', };}
+                        else                 {return { 'backgroundColor': '#708090', };}
+                      },
+                     // show an alarm bell icon if anything is open
+                     icons: function(item, entity){
+                        var sensors = [
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_4.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_5.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_6.state",
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_7.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0) { return 'mdi-bell'; }
+                     },
+                  },
+
+
+                  // ---- this gives a total of windows open         ----
+                  // ---- press on the icon to open the windows page ----
+
+                  {
+                     position: [0, 2],
+                     type: TYPES.CUSTOM,
+                     id: { },
+                     title: 'Lights',
+                     action: function(e) {
+                       window.openPage(CONFIG.pages[2]);
+                     },
+                    // set the state to 'off' if all lights are off
                      state: function() {
                         var sensors = [
                                     "&light.hue_lightstrip.state",
@@ -175,6 +226,7 @@ var CONFIG = {
                         else if (count == 0) {return { 'backgroundColor': '#2E8B57', };}
                         else                 {return { 'backgroundColor': '#708090', };}
                       },
+                     // show an alarm bell icon if anything is on
                      icons: function(item, entity){
                         var sensors = [
                                     "&light.hue_lightstrip.state",
@@ -191,8 +243,91 @@ var CONFIG = {
                      },
                   },
 
-                ]        // end of items for Doors and Windows group
-            },
+                ]        // end of items
+            },           // end of group 
+     
+            //---- second group on this page ----
+
+            {
+               title: 'Weather',
+               width: 1,
+               height: 4,
+               items: [
+                
+                {
+                   position: [0, 0],
+                   type: TYPES.SENSOR,
+                   title: 'Outdoor',
+                   id: 'sensor.outtemp',
+                   unit: 'F', // override default entity unit
+                   state: false, // hiding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 85)      {return {'backgroundColor': '#B80D0D',  };}
+                     else if (entity.state > 60) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 32) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 32) {return {'backgroundColor': 'blue',     };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
+                {
+                   position: [0, 1],
+                   type: TYPES.SENSOR,
+                   title: 'Wind Gust',
+                   id: 'sensor.wind',
+                   unit: 'mph', // override default entity unit
+                   state: false, // hiding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(0) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 40) {return {'backgroundColor': '#B80D0D',  };}
+                     else if (entity.state > 20)      {return {'backgroundColor': 'salmon', };}
+                     else if (entity.state > 10) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state > 0)  {return {'backgroundColor': '#2E8B57',  };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
+                {
+                   position: [0, 2],
+                   type: TYPES.SENSOR,
+                   title: 'Rain',
+                   id: 'sensor.dayrain',
+                   unit: 'in', // override default entity unit
+                   state: false, // hiding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(2) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 2) {return {'backgroundColor': '#B80D0D',     };}
+                     else if (entity.state > 1.0) {return {'backgroundColor': 'salmon', };}
+                     else if (entity.state > 0.7)      {return {'backgroundColor': 'darkblue',  };}
+                     else if (entity.state > 0.3)  {return {'backgroundColor': 'blue',  };}
+                     else if (entity.state > 0)  {return {'backgroundColor': 'green',  };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
+                ]        // end of items for Weather
+              },         // end of Weather group
+
+         ],  // end of groups
+      },
+
+      // ------------ page-2 is doors and windows -----------
+      {
+         title: 'Main page',
+         bg: 'images/bg1.jpeg',
+         icon: 'mdi-bell', // home icon
+         groups: [
+
 
             {
                title: 'Doors and Windows',
@@ -345,78 +480,6 @@ var CONFIG = {
 
                 ]        // end of items for Doors and Windows group
             },           // end of Doors and Windows group on Main page
-     
-            //---- second group on this page ----
-
-            {
-               title: 'Weather',
-               width: 2,
-               height: 4,
-               items: [
-                
-                {
-                   position: [0, 0],
-                   type: TYPES.SENSOR,
-                   title: 'Outdoor',
-                   id: 'sensor.outtemp',
-                   unit: 'F', // override default entity unit
-                   state: false, // hiding state
-                   filter: function (value) { // optional
-                      var num = parseFloat(value);
-                      return num && !isNaN(num) ? num.toFixed(1) : value;
-                   },
-                   customStyles: function(item, entity){
-                     if (entity.state > 85)      {return {'backgroundColor': '#B80D0D',  };}
-                     else if (entity.state > 60) {return {'backgroundColor': '#2E8B57',  };}
-                     else if (entity.state > 32) {return {'backgroundColor': 'darkblue', };}
-                     else if (entity.state < 32) {return {'backgroundColor': 'blue',     };}
-                     else {return { 'backgroundColor': '#708090',};}
-                  },
-                },
-
-                {
-                   position: [0, 1],
-                   type: TYPES.SENSOR,
-                   title: 'Wind Gust',
-                   id: 'sensor.wind',
-                   unit: 'mph', // override default entity unit
-                   state: false, // hiding state
-                   filter: function (value) { // optional
-                      var num = parseFloat(value);
-                      return num && !isNaN(num) ? num.toFixed(0) : value;
-                   },
-                   customStyles: function(item, entity){
-                     if (entity.state > 40) {return {'backgroundColor': '#B80D0D',  };}
-                     else if (entity.state > 20)      {return {'backgroundColor': 'salmon', };}
-                     else if (entity.state > 10) {return {'backgroundColor': 'darkblue', };}
-                     else if (entity.state > 0)  {return {'backgroundColor': '#2E8B57',  };}
-                     else {return { 'backgroundColor': '#708090',};}
-                  },
-                },
-
-                {
-                   position: [0, 2],
-                   type: TYPES.SENSOR,
-                   title: 'Rain',
-                   id: 'sensor.dayrain',
-                   unit: 'in', // override default entity unit
-                   state: false, // hiding state
-                   filter: function (value) { // optional
-                      var num = parseFloat(value);
-                      return num && !isNaN(num) ? num.toFixed(2) : value;
-                   },
-                   customStyles: function(item, entity){
-                     if (entity.state > 2) {return {'backgroundColor': '#B80D0D',     };}
-                     else if (entity.state > 1.0) {return {'backgroundColor': 'salmon', };}
-                     else if (entity.state > 0.7)      {return {'backgroundColor': 'darkblue',  };}
-                     else if (entity.state > 0.3)  {return {'backgroundColor': 'blue',  };}
-                     else if (entity.state > 0)  {return {'backgroundColor': 'green',  };}
-                     else {return { 'backgroundColor': '#708090',};}
-                  },
-                },
-
-                ]        // end of items for Doors and Windows
-              },         // end of Weather group
 
         ],  // end of groups on Main page
       },    // end of Main page
