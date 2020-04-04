@@ -71,6 +71,130 @@ var CONFIG = {
          groups: [
 
             {
+               title: 'Summary',
+               width: 1,
+               height: 4,
+               items: [
+
+                  // ---- this gives a total of doors open ----
+                  {
+                     position: [0, 0],
+                     type: TYPES.CUSTOM,
+                     id: { },
+                     title: 'Doors',
+                     icons: {
+                        1: 'mdi-numeric-one-circle',
+                        2: 'mdi-numeric-two-circle',
+                        3: 'mdi-numeric-three-circle',
+                        4: 'mdi-numeric-four-circle'
+                     },
+                     state: function() {
+                        var sensors = [
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor.state", 
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_2.state", 
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_3.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0) { return count; } else { return "ok"; }
+                     },
+                     customStyles: function(item, entity){
+                        var sensors = [
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor.state", 
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_2.state", 
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_3.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0)       {return { 'backgroundColor': '#B80D0D', };}
+                        else if (count == 0) {return { 'backgroundColor': '#2E8B57', };}
+                        else                 {return { 'backgroundColor': '#708090', };}
+                      },
+                     icons: function(item, entity){
+                        var sensors = [
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor.state", 
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_2.state", 
+                                    "&binary_sensor.ecolink_door_window_sensor_sensor_3.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0) { return 'mdi-bell'; }
+                     },
+                  },
+
+                  // ---- this gives a total of windows open         ----
+                  // ---- press on the icon to open the windows page ----
+
+                  {
+                     position: [0, 1],
+                     type: TYPES.CUSTOM,
+                     id: { },
+                     title: 'Lights',
+                     action: function(e) {
+                       window.openPage(CONFIG.pages[1]);
+                     },
+                     icons: {
+                        1: 'mdi-numeric-one-circle',
+                        2: 'mdi-numeric-two-circle',
+                        3: 'mdi-numeric-three-circle',
+                        4: 'mdi-numeric-four-circle'
+                     },
+                     state: function() {
+                        var sensors = [
+                                    "&light.hue_lightstrip.state",
+                                    "&light.desk.state",
+                                    "&light.overhead.state",
+                                    "&light.big_lamp.state",
+                                    "&light.corner.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0) { return count; } else { return "off"; }
+                     },
+                     customStyles: function(item, entity){
+                        var sensors = [
+                                    "&light.hue_lightstrip.state",
+                                    "&light.desk.state",
+                                    "&light.overhead.state",
+                                    "&light.big_lamp.state",
+                                    "&light.corner.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0)       {return { 'backgroundColor': '#B80D0D', };}
+                        else if (count == 0) {return { 'backgroundColor': '#2E8B57', };}
+                        else                 {return { 'backgroundColor': '#708090', };}
+                      },
+                     icons: function(item, entity){
+                        var sensors = [
+                                    "&light.hue_lightstrip.state",
+                                    "&light.desk.state",
+                                    "&light.overhead.state",
+                                    "&light.big_lamp.state",
+                                    "&light.corner.state",
+                                     ];
+                        var count = 0;
+                        for(i=0; i<sensors.length; i++) {
+                            if (this.parseFieldValue(sensors[i]) == "on") { count++; }
+                        }
+                        if (count > 0) { return 'mdi-bell'; }
+                     },
+                  },
+
+                ]        // end of items for Doors and Windows group
+            },
+
+            {
                title: 'Doors and Windows',
                width: 2,
                height: 4,
