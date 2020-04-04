@@ -19,17 +19,17 @@ var CONFIG = {
    // next fields are optional
    events: [],
    timeFormat: 24,
-   menuPosition: MENU_POSITIONS.LEFT, // or BOTTOM
+   menuPosition: MENU_POSITIONS.BOTTOM, // or BOTTOM
+   //menuPosition: MENU_POSITIONS.LEFT, // or BOTTOM
    hideScrollbar: false, // horizontal scrollbar
    groupsAlign: GROUP_ALIGNS.HORIZONTALLY, // or VERTICALLY
    onReady: function () {},
 
    header: { // https://github.com/resoai/TileBoard/wiki/Header-configuration
       styles: {
-         padding: '30px 130px 0',
-         //padding: '10px 130px 0',
-         //fontSize: '16px'
-         fontSize: '14px'
+         //padding: '30px 130px 0',
+         padding: '10px 130px 0',
+         fontSize: '16px'
       },
       right: [],
       left: [
@@ -72,8 +72,8 @@ var CONFIG = {
 
             {
                title: 'Summary',
-               width: 1,
-               height: 4,
+               width: 2,
+               height: 3,
                items: [
 
                   // ---- this gives a total of doors open ----
@@ -251,7 +251,7 @@ var CONFIG = {
             {
                title: 'Weather',
                width: 1,
-               height: 4,
+               height: 3,
                items: [
                 
                 {
