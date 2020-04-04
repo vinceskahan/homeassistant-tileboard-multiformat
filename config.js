@@ -239,7 +239,7 @@ var CONFIG = {
                         for(i=0; i<sensors.length; i++) {
                             if (this.parseFieldValue(sensors[i]) == "on") { count++; }
                         }
-                        if (count > 0) { return 'mdi-bell'; }
+                        if (count > 0) { return 'mdi-lightbulb-on'; }
                      },
                   },
 
