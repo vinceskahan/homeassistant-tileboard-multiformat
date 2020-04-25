@@ -310,7 +310,7 @@ var CONFIG = {
                      else if (entity.state > 1.0) {return {'backgroundColor': 'salmon', };}
                      else if (entity.state > 0.7)      {return {'backgroundColor': 'darkblue',  };}
                      else if (entity.state > 0.3)  {return {'backgroundColor': 'blue',  };}
-                     else if (entity.state > 0)  {return {'backgroundColor': 'green',  };}
+                     else if (entity.state > 0)  {return {'backgroundColor': '#2E8B57',  };}
                      else {return { 'backgroundColor': '#708090',};}
                   },
                 },
