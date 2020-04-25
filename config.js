@@ -332,7 +332,7 @@ var CONFIG = {
             {
                title: 'Doors and Windows',
                width: 2,
-               height: 4,
+               height: 3,
                items: [
 
                   {
@@ -499,7 +499,7 @@ var CONFIG = {
             {
                title: 'Lights',
                width: 2,
-               height: 4,
+               height: 3,
                items: [
                   {
                      position: [0, 0],
