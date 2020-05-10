@@ -315,6 +315,26 @@ var CONFIG = {
                   },
                 },
 
+                {
+                   position: [0, 3],
+                   type: TYPES.SENSOR,
+                   title: 'Outdoor Front',
+                   id: 'sensor.frontdoortemp',
+                   unit: 'F', // override default entity unit
+                   state: false, // hiding state
+                   filter: function (value) { // optional
+                      var num = parseFloat(value);
+                      return num && !isNaN(num) ? num.toFixed(1) : value;
+                   },
+                   customStyles: function(item, entity){
+                     if (entity.state > 85)      {return {'backgroundColor': '#B80D0D',  };}
+                     else if (entity.state > 60) {return {'backgroundColor': '#2E8B57',  };}
+                     else if (entity.state > 32) {return {'backgroundColor': 'darkblue', };}
+                     else if (entity.state < 32) {return {'backgroundColor': 'blue',     };}
+                     else {return { 'backgroundColor': '#708090',};}
+                  },
+                },
+
                 ]        // end of items for Weather
               },         // end of Weather group
 
