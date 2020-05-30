@@ -318,7 +318,7 @@ var CONFIG = {
                 {
                    position: [0, 3],
                    type: TYPES.SENSOR,
-                   title: 'Outdoor Front',
+                   title: 'Office',
                    id: 'sensor.frontdoortemp',
                    unit: 'F', // override default entity unit
                    state: false, // hiding state
