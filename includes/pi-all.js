@@ -458,26 +458,26 @@ var CONFIG = {
                     }
                   },
 
-//                  {
-//                     position: [0, 2],
-//                     type: TYPES.SENSOR_ICON,
-//                     title: 'Laundry Window',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_3',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
+                  {
+                     position: [0, 2],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Laundry Window',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_3',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
                 ]        // end of items for Doors and Windows group
             },           // end of Doors and Windows group on Main page
 
@@ -486,47 +486,47 @@ var CONFIG = {
                // width: 1,
                height: 4,
                items: [
-//
-//                  {
-//                     position: [0, 0],
-//                     type: TYPES.SENSOR_ICON,
-//                     title: 'Left',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [0, 1],
-//                     type: TYPES.SENSOR_ICON,
-//                     title: 'Right',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
+
+                  {
+                     position: [0, 0],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Left',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [0, 1],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Right',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
                 ]        // end of items for Weather
               },         // end of Weather group
 
@@ -535,47 +535,47 @@ var CONFIG = {
                // width: 1,
                height: 4,
                items: [
-//
-//                  {
-//                     position: [0, 0],
-//                     type: TYPES.SENSOR_ICON,
-//                     title: 'Left',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [0, 1],
-//                     type: TYPES.SENSOR_ICON,
-//                     title: 'Right',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
+
+                  {
+                     position: [0, 0],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Left',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [0, 1],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Right',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
                 ]        // end of items for Weather
               },         // end of Weather group
 
@@ -585,65 +585,65 @@ var CONFIG = {
                height: 4,
                items: [
 
-//                  {
-//                     position: [0, 0],
-//                     type: TYPES.SENSOR_ICON,
-//                     title: 'Left',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [0, 1],
-//                     type: TYPES.SENSOR_ICON,
-//                     title: 'Middle',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [0, 2],
-//                     type: TYPES.SENSOR_ICON,
-//                     title: 'Right',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
+                  {
+                     position: [0, 0],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Left',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [0, 1],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Middle',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [0, 2],
+                     type: TYPES.SENSOR_ICON,
+                     title: 'Right',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
 
                 ]        // end of items for Weather
               },         // end of Weather group
