@@ -19,8 +19,8 @@ var CONFIG = {
    // next fields are optional
    events: [],
    timeFormat: 24,
-   //menuPosition: MENU_POSITIONS.BOTTOM, // or BOTTOM
-   menuPosition: MENU_POSITIONS.LEFT, // or BOTTOM
+   menuPosition: MENU_POSITIONS.BOTTOM, // or BOTTOM
+   //menuPosition: MENU_POSITIONS.LEFT, // or BOTTOM
    hideScrollbar: false, // horizontal scrollbar
    groupsAlign: GROUP_ALIGNS.HORIZONTALLY, // or VERTICALLY
    onReady: function () {},
@@ -29,7 +29,7 @@ var CONFIG = {
       styles: {
          //padding: '30px 130px 0',
          //padding: '10px 130px 0',
-         padding: '10px 30px 0',
+         padding: '10px 130px 0',
          fontSize: '16px'
       },
       right: [],
@@ -53,7 +53,7 @@ var CONFIG = {
             {
                title: 'Summary',
                width: 2,
-               height: 4,
+               height: 3,
                items: [
 
                   // ---- this gives a total of doors open ----
@@ -305,9 +305,9 @@ var CONFIG = {
               },         // end of Weather group
 
             {
-               title: 'Kitchen + FR',
+               title: 'Kitchen',
                // width: 1,
-               height: 4,
+               height: 3,
                items: [
                   {
                      position: [0, 0],
@@ -349,8 +349,17 @@ var CONFIG = {
                     }
                   },
 
+                ]        // end of items 
+              },        // end of group
+
+            {
+               title: 'Family Room',
+               width: 1,
+               height: 3,
+               items: [
+
                   {
-                     position: [0, 2],
+                     position: [0, 0],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Left',
                      id: 'binary_sensor.ecolink_door_window_sensor_sensor_5',
@@ -370,7 +379,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [0, 3],
+                     position: [0, 1],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Middle',
                      id: 'binary_sensor.ecolink_door_window_sensor_sensor_6',
@@ -390,7 +399,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [0, 4],
+                     position: [0, 2],
                      type: TYPES.SENSOR_ICON,
                      title: 'FR Right',
                      id: 'binary_sensor.ecolink_door_window_sensor_sensor_7',
@@ -415,7 +424,7 @@ var CONFIG = {
             {
                title: 'Foyer + Laundry',
                // width: 1,
-               height: 4,
+               height: 3,
                items: [
 
                   {
@@ -484,7 +493,7 @@ var CONFIG = {
             {
                title: 'Office',
                // width: 1,
-               height: 4,
+               height: 3,
                items: [
 //
 //                  {
@@ -533,7 +542,7 @@ var CONFIG = {
             {
                title: 'Dining Room',
                // width: 1,
-               height: 4,
+               height: 3,
                items: [
 //
 //                  {
@@ -582,7 +591,7 @@ var CONFIG = {
             {
                title: 'Living Room',
                // width: 1,
-               height: 4,
+               height: 3,
                items: [
 
 //                  {
