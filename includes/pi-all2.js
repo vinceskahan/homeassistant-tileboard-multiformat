@@ -304,183 +304,183 @@ var CONFIG = {
                     }
                   },
 
-//                  {
-//                     position: [3.6, 1.6],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'Laundry Window',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_3',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//        //----- row 3 when displayed ----------
-//
-//                  {
-//                     position: [1.5, 2.0],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'DR Left',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [1.9, 2.0],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'DR Right',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [2.4, 2.0],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'Office Left',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [2.8, 2.0],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'Office Right',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [3.3, 2.0],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'LR Left',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [3.7, 2.0],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'LR Middle',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
-//
-//                  {
-//                     position: [4.1, 2.0],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'LR Right',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
+                  {
+                     position: [3.6, 1.6],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'Laundry Window',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_3',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+        //----- row 3 when displayed ----------
+
+                  {
+                     position: [1.5, 2.0],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'DR Left',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [1.9, 2.0],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'DR Right',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [2.4, 2.0],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'Office Left',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [2.8, 2.0],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'Office Right',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [3.3, 2.0],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'LR Left',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [3.7, 2.0],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'LR Middle',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [4.1, 2.0],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'LR Right',
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-window-closed',
+                        off: 'mdi-window-open',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
 
                 ]        // end of items for Weather
               },         // end of Weather group
