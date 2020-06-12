@@ -54,7 +54,7 @@ var CONFIG = {
                items: [
 		
 		{
-		   position: [0, 0.5],
+		   position: [0.1, 0.3],
 		   width: 1.5,
 		   height: 1,
 		   title: 'Outside Temp',
@@ -90,7 +90,7 @@ var CONFIG = {
 		},
 		
 		{
-		   position: [1.55, 0.5],
+		   position: [1.65, 0.3],
 		   width: 1.5,
 		   height: 1,
 		   title: 'Wind',
@@ -119,7 +119,7 @@ var CONFIG = {
 		},
 		
 		{
-		   position: [3.1, 0.5],
+		   position: [3.2, 0.3],
 		   width: 1.5,
 		   height: 1,
 		   title: 'Rain',
@@ -151,7 +151,7 @@ var CONFIG = {
         //----- row 2 when displayed ----------
 
                   {
-                     position: [0.15, 1.6],
+                     position: [0.15, 1.45],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -173,7 +173,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [0.55, 1.6],
+                     position: [0.55, 1.45],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -195,7 +195,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [0.95, 1.6],
+                     position: [0.95, 1.45],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -217,7 +217,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [1.7, 1.6],
+                     position: [1.7, 1.45],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -239,7 +239,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [2.2, 1.6],
+                     position: [2.2, 1.45],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -261,7 +261,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [2.6, 1.6],
+                     position: [2.6, 1.45],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -283,7 +283,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [3.0, 1.6],
+                     position: [3.0, 1.45],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -305,7 +305,7 @@ var CONFIG = {
                   },
 
 //                  {
-//                     position: [3.6, 1.6],
+//                     position: [3.6, 1.45],
 //                     type: TYPES.SENSOR_ICON,
 //                     width: 0.4,
 //                     height: 0.4,
@@ -328,30 +328,30 @@ var CONFIG = {
 //
 //        //----- row 3 when displayed ----------
 //
-//                  {
-//                     position: [1.5, 2.0],
-//                     type: TYPES.SENSOR_ICON,
-//                     width: 0.4,
-//                     height: 0.4,
-//                     title: 'DR Left',
-//                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
-//                     states: {
-//                        on: "OPEN",
-//                        off: "closed",
-//                     },
-//                     icons: {
-//                        on: 'mdi-window-closed',
-//                        off: 'mdi-window-open',
-//                     },
-//                     customStyles: function(item, entity){
-//                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
-//                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
-//                        else {return { 'backgroundColor': '#FFA100',};}
-//                    }
-//                  },
+//               {
+//                   position: [1.5, 1.9],
+//                   type: TYPES.SENSOR_ICON,
+//                   width: 0.4,
+//                   height: 0.4,
+//                   title: 'DR Left',
+//                   id: 'binary_sensor.ecolink_door_window_sensor_sensor_2',
+//                   states: {
+//                      on: "OPEN",
+//                      off: "closed",
+//                   },
+//                   icons: {
+//                      on: 'mdi-window-closed',
+//                      off: 'mdi-window-open',
+//                   },
+//                   customStyles: function(item, entity){
+//                      if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+//                      else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+//                      else {return { 'backgroundColor': '#FFA100',};}
+//                  }
+//                },
 //
 //                  {
-//                     position: [1.9, 2.0],
+//                     position: [1.9, 1.9],
 //                     type: TYPES.SENSOR_ICON,
 //                     width: 0.4,
 //                     height: 0.4,
@@ -373,7 +373,7 @@ var CONFIG = {
 //                  },
 //
 //                  {
-//                     position: [2.4, 2.0],
+//                     position: [2.4, 1.9],
 //                     type: TYPES.SENSOR_ICON,
 //                     width: 0.4,
 //                     height: 0.4,
@@ -395,7 +395,7 @@ var CONFIG = {
 //                  },
 //
 //                  {
-//                     position: [2.8, 2.0],
+//                     position: [2.8, 1.9],
 //                     type: TYPES.SENSOR_ICON,
 //                     width: 0.4,
 //                     height: 0.4,
@@ -417,7 +417,7 @@ var CONFIG = {
 //                  },
 //
 //                  {
-//                     position: [3.3, 2.0],
+//                     position: [3.3, 1.9],
 //                     type: TYPES.SENSOR_ICON,
 //                     width: 0.4,
 //                     height: 0.4,
@@ -439,7 +439,7 @@ var CONFIG = {
 //                  },
 //
 //                  {
-//                     position: [3.7, 2.0],
+//                     position: [3.7, 1.9],
 //                     type: TYPES.SENSOR_ICON,
 //                     width: 0.4,
 //                     height: 0.4,
@@ -461,7 +461,7 @@ var CONFIG = {
 //                  },
 //
 //                  {
-//                     position: [4.1, 2.0],
+//                     position: [4.1, 1.9],
 //                     type: TYPES.SENSOR_ICON,
 //                     width: 0.4,
 //                     height: 0.4,
