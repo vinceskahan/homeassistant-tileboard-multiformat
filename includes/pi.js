@@ -136,7 +136,7 @@ var CONFIG = {
 		      max: 100,
 		      cap: 'round',
 		      thick: 20,
-		      label: 'Wind',
+		      label: 'Rain',
 		      append: '@attributes.unit_of_measurement',
 		      duration: 1500, // Defaults to 1500ms
 		      thresholds: { 0: { color: 'lightgreen'},  0.5: { color: 'cyan' }, 1: { color: 'orange' }, 2: { color: 'red' } },  // Defaults to undefined
