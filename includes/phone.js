@@ -498,6 +498,125 @@ var CONFIG = {
                     }
                   },
 
+//--cut here--
+                  {
+                     position: [0, 4],
+                     type: TYPES.SENSOR_ICON,
+                     title: '8'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_8',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+                  {
+                     position: [0, 5],
+                     type: TYPES.SENSOR_ICON,
+                     title: '9'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_9',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+                  {
+                     position: [0, 6],
+                     type: TYPES.SENSOR_ICON,
+                     title: '10'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_10',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+                  {
+                     position: [0, 4],
+                     type: TYPES.SENSOR_ICON,
+                     title: '8'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_8',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+                  {
+                     position: [0, 4],
+                     type: TYPES.SENSOR_ICON,
+                     title: '8'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_8',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+                  {
+                     position: [0, 4],
+                     type: TYPES.SENSOR_ICON,
+                     title: '8'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_8',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+                  {
+                     position: [0, 4],
+                     type: TYPES.SENSOR_ICON,
+                     title: '8'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_8',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+                  {
+                     position: [0, 4],
+                     type: TYPES.SENSOR_ICON,
+                     title: '8'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_8',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+                  {
+                     position: [0, 4],
+                     type: TYPES.SENSOR_ICON,
+                     title: '8'
+                     id: 'binary_sensor.ecolink_door_window_sensor_sensor_8',
+                     states: { on: "OPEN", off: "closed", },
+                     icons: { on: 'mdi-bell', off: 'mdi-bell-off', },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
                 ]        // end of items for Doors and Windows group
             },           // end of Doors and Windows group on Main page
 
