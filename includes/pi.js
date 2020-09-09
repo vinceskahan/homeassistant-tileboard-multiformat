@@ -54,8 +54,8 @@ var CONFIG = {
                items: [
 		
 		{
-		   position: [0.1, 0.3],
-		   width: 1.5,
+		   position: [0.0, 0.3],
+		   width: 1.15,
 		   height: 1,
 		   title: 'Outside Temp',
 		   subtitle: '',
@@ -90,8 +90,8 @@ var CONFIG = {
 		},
 		
 		{
-		   position: [1.65, 0.3],
-		   width: 1.5,
+		   position: [1.17, 0.3],
+		   width: 1.15,
 		   height: 1,
 		   title: 'Wind',
 		   subtitle: '',
@@ -119,8 +119,8 @@ var CONFIG = {
 		},
 		
 		{
-		   position: [3.2, 0.3],
-		   width: 1.5,
+		   position: [2.34, 0.3],
+		   width: 1.15,
 		   height: 1,
 		   title: 'Rain',
 		   subtitle: '',
@@ -143,6 +143,43 @@ var CONFIG = {
 		      labelOnly: false, // Defaults to false
 		      foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
 		      backgroundColor: 'black',                // Defaults to rgba(0, 0, 0, 0.1)
+		      fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
+		   },
+		},
+		
+		
+		{
+		   position: [3.51, 0.3],
+		   width: 1.15,
+		   height: 1,
+		   title: 'Air Quality',
+		   subtitle: '',
+		   type: TYPES.GAUGE,
+		   id: 'sensor.purpleair_aqi_a',
+		   value: function(item, entity){
+		      return entity.state;
+		   },
+		   settings: {
+		      size: 300,
+		      type: 'semi',
+		      min: 0,
+		      max: 400,
+		      cap: 'round',
+		      thick: 20,
+		      label: 'Air Quality',
+		      append: '@attributes.unit_of_measurement',
+		      duration: 1500, // Defaults to 1500ms
+		      thresholds: { 0: { color: 'green'},  51: { color: 'yellow' }, 101: { color: 'orange' }, 151: { color: 'red' }, 201: { color: 'purple' }, 300: { color: 'maroon' } },  // Defaults to undefined
+		      labelOnly: false, // Defaults to false
+		      foregroundColor: 'rgba(0, 150, 136, 1)', // Defaults to rgba(0, 150, 136, 1)
+		      backgroundColor: 'black',                // Defaults to rgba(0, 0, 0, 0.1)
+		      //customStyles: function(item, entity){
+		                      //if (entity.state > 85)      {return {'backgroundColor': '#B80D0D',  };}
+		                      //else if (entity.state > 60) {return {'backgroundColor': '#2E8B57',  };}
+		                      //else if (entity.state > 32) {return {'backgroundColor': 'darkblue', };}
+		                      //else if (entity.state < 32) {return {'backgroundColor': 'blue',     };}
+		                      //else {return { 'backgroundColor': '#708090',};}
+		                   //},
 		      fractionSize: 0, // Number of decimal places to round the number to. Defaults to current locale formatting
 		   },
 		},
@@ -481,7 +518,7 @@ var CONFIG = {
                         else {return { 'backgroundColor': '#FFA100',};}
                     }
                   },
-
+		
                 ]        // end of items for Weather
               },         // end of Weather group
          ],        // end of items for Weather
