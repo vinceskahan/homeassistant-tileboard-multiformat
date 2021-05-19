@@ -523,6 +523,61 @@ var CONFIG = {
                         else {return { 'backgroundColor': '#FFA100',};}
                     }
                   },
+
+        // bottom row when displayed
+		{
+		   position: [1.0, 2.32],
+		   width: 0.8,
+		   height: 0.25,
+		   title: 'Office',
+		   subtitle: '',
+		   type: TYPES.SENSOR,
+           state: false,
+		   id: 'sensor.ecowittintemp',
+		   value: function(item, entity){
+		      return entity.state;
+		   },
+           filter: function (value) { // optional
+               var num = parseFloat(value);
+               return num && !isNaN(num) ? num.toFixed(1) : value;
+            }
+		},
+		{
+		   position: [2.0, 2.32],
+		   width: 0.8,
+		   height: 0.25,
+		   title: 'sensor1',
+		   subtitle: '',
+		   type: TYPES.SENSOR,
+           state: false,
+		   id: 'sensor.ecowitttempsensor1',
+		   value: function(item, entity){
+		      return entity.state;
+		   },
+           filter: function (value) { // optional
+               var num = parseFloat(value);
+               return num && !isNaN(num) ? num.toFixed(1) : value;
+            }
+		},
+		{
+		   position: [3.0, 2.32],
+		   width: 0.8,
+		   height: 0.25,
+		   title: 'sensor2',
+		   subtitle: '',
+		   type: TYPES.SENSOR,
+           state: false,
+		   id: 'sensor.ecowitttempsensor2',
+		   value: function(item, entity){
+		      return entity.state;
+		   },
+           filter: function (value) { // optional
+               var num = parseFloat(value);
+               return num && !isNaN(num) ? num.toFixed(1) : value;
+            }
+		},
+
+        // end of bottom row
 		
                 ]        // end of items for Weather
               },         // end of Weather group
