@@ -3,6 +3,8 @@
 // specify which config you want.  This is 'pi.js' as of
 // 2021-0124 so that there's something as a default...
 //
+// update 2022-0320 - for the fire7 now
+//
 
 //
 // color codes - https://www.rapidtables.com/web/color/green-color.html
@@ -59,9 +61,9 @@ var CONFIG = {
                items: [
 		
 		{
-		   position: [0.0, 0.3],
-		   width: 1.15,
-		   height: 1,
+		   position: [0.15, 0.3],
+		   width: 0.90,
+		   height: 0.80,
 		   title: 'Outside Temp',
 		   subtitle: '',
 		   type: TYPES.GAUGE,
@@ -70,10 +72,10 @@ var CONFIG = {
 		      return entity.state;
 		   },
 		   settings: {
-		      size: 300,
+		      size: 200,
 		      type: 'semi',
 		      min: 0,
-		      max: 100,
+		      max: 120,
 		      cap: 'round',
 		      thick: 20,
 		      label: 'Outside Temp',
@@ -95,9 +97,9 @@ var CONFIG = {
 		},
 		
 		{
-		   position: [1.17, 0.3],
-		   width: 1.15,
-		   height: 1,
+		   position: [1.06, 0.3],
+		   width: 0.90,
+		   height: 0.80,
 		   title: 'Wind',
 		   subtitle: '',
 		   type: TYPES.GAUGE,
@@ -106,7 +108,7 @@ var CONFIG = {
 		      return entity.state;
 		   },
 		   settings: {
-		      size: 300,
+		      size: 200,
 		      type: 'semi',
 		      min: 0,
 		      max: 100,
@@ -124,9 +126,9 @@ var CONFIG = {
 		},
 		
 		{
-		   position: [2.34, 0.3],
-		   width: 1.15,
-		   height: 1,
+		   position: [1.97, 0.3],
+		   width: 0.90,
+		   height: 0.80,
 		   title: 'Rain',
 		   subtitle: '',
 		   type: TYPES.GAUGE,
@@ -135,7 +137,7 @@ var CONFIG = {
 		      return entity.state;
 		   },
 		   settings: {
-		      size: 300,
+		      size: 200,
 		      type: 'semi',
 		      min: 0,
 		      max: 100,
@@ -154,9 +156,9 @@ var CONFIG = {
 		
 		
 		{
-		   position: [3.51, 0.3],
-		   width: 1.15,
-		   height: 1,
+		   position: [2.88, 0.3],
+		   width: 0.90,
+		   height: 0.80,
 		   title: 'Air Quality',
 		   subtitle: '',
 		   type: TYPES.GAUGE,
@@ -165,7 +167,7 @@ var CONFIG = {
 		      return entity.state;
 		   },
 		   settings: {
-		      size: 300,
+		      size: 200,
 		      type: 'semi',
 		      min: 0,
 		      max: 400,
@@ -193,7 +195,7 @@ var CONFIG = {
         //----- row 2 when displayed ----------
 
                   {
-                     position: [0.15, 1.45],
+                     position: [0.15, 1.10],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -215,7 +217,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [0.55, 1.45],
+                     position: [0.55, 1.10],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -237,7 +239,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [0.95, 1.45],
+                     position: [0.95, 1.10],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -259,7 +261,30 @@ var CONFIG = {
                   },
 
                   {
-                     position: [1.7, 1.45],
+                     position: [1.35, 1.10],
+                     type: TYPES.SENSOR_ICON,
+                     width: 0.4,
+                     height: 0.4,
+                     title: 'Garage',
+                     //####id: 'binary_sensor.ecolink_door_window_sensor_sensor_8',
+                     id: 'binary_sensor.ecolink_garage_door_tilt_sensor_sensor',
+                     states: {
+                        on: "OPEN",
+                        off: "closed",
+                     },
+                     icons: {
+                        on: 'mdi-door-open',
+                        off: 'mdi-door-closed',
+                     },
+                     customStyles: function(item, entity){
+                        if (entity.state === 'off') {return {'backgroundColor': '#2E8B57',};}
+                        else if (entity.state === 'on') {return {'backgroundColor': '#B80D0D',};}
+                        else {return { 'backgroundColor': '#FFA100',};}
+                    }
+                  },
+
+                  {
+                     position: [1.75, 1.10],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -281,7 +306,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [2.2, 1.45],
+                     position: [2.15, 1.10],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -303,7 +328,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [2.6, 1.45],
+                     position: [2.55, 1.10],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -325,7 +350,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [3.0, 1.45],
+                     position: [2.95, 1.10],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -347,7 +372,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [3.6, 1.45],
+                     position: [3.35, 1.10],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -371,7 +396,7 @@ var CONFIG = {
 //        //----- row 3 when displayed ----------
 //
                {
-                   position: [1.5, 1.9],
+                   position: [0.55, 1.50],
                    type: TYPES.SENSOR_ICON,
                    width: 0.4,
                    height: 0.4,
@@ -393,7 +418,7 @@ var CONFIG = {
                 },
 
                 {
-                     position: [1.9, 1.9],
+                     position: [0.95, 1.5],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -415,7 +440,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [2.4, 1.9],
+                     position: [1.35, 1.5],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -437,7 +462,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [2.8, 1.9],
+                     position: [1.75, 1.5],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -459,7 +484,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [3.3, 1.9],
+                     position: [2.15, 1.5],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -481,7 +506,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [3.7, 1.9],
+                     position: [2.55, 1.5],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -503,7 +528,7 @@ var CONFIG = {
                   },
 
                   {
-                     position: [4.1, 1.9],
+                     position: [2.95, 1.5],
                      type: TYPES.SENSOR_ICON,
                      width: 0.4,
                      height: 0.4,
@@ -526,9 +551,9 @@ var CONFIG = {
 
         // bottom row when displayed
 		{
-		   position: [1.0, 2.32],
-		   width: 0.8,
-		   height: 0.25,
+		   position: [0.45, 1.90],
+		   width: 0.5,
+		   height: 0.30,
 		   title: 'Office',
 		   subtitle: '',
 		   type: TYPES.SENSOR,
@@ -543,10 +568,10 @@ var CONFIG = {
             }
 		},
 		{
-		   position: [2.0, 2.32],
-		   width: 0.8,
-		   height: 0.25,
-		   title: 'sensor1',
+		   position: [0.95, 1.90],
+		   width: 0.5,
+		   height: 0.30,
+		   title: 'master',
 		   subtitle: '',
 		   type: TYPES.SENSOR,
            state: false,
@@ -559,15 +584,70 @@ var CONFIG = {
                return num && !isNaN(num) ? num.toFixed(1) : value;
             }
 		},
+
 		{
-		   position: [3.0, 2.32],
-		   width: 0.8,
-		   height: 0.25,
-		   title: 'sensor2',
+		   position: [1.45, 1.90],
+		   width: 0.5,
+		   height: 0.30,
+		   title: 'BR2',
 		   subtitle: '',
 		   type: TYPES.SENSOR,
            state: false,
 		   id: 'sensor.ecowitttempsensor2',
+		   value: function(item, entity){
+		      return entity.state;
+		   },
+           filter: function (value) { // optional
+               var num = parseFloat(value);
+               return num && !isNaN(num) ? num.toFixed(1) : value;
+            }
+		},
+
+		{
+		   position: [1.95, 1.90],
+		   width: 0.5,
+		   height: 0.30,
+		   title: 'BR3',
+		   subtitle: '',
+		   type: TYPES.SENSOR,
+           state: false,
+		   id: 'sensor.ecowitttempsensor3',
+		   value: function(item, entity){
+		      return entity.state;
+		   },
+           filter: function (value) { // optional
+               var num = parseFloat(value);
+               return num && !isNaN(num) ? num.toFixed(1) : value;
+            }
+		},
+
+		{
+		   position: [2.45, 1.90],
+		   width: 0.5,
+		   height: 0.30,
+		   title: 'FR',
+		   subtitle: '',
+		   type: TYPES.SENSOR,
+           state: false,
+		   id: 'sensor.ecowitttempsensor4',
+		   value: function(item, entity){
+		      return entity.state;
+		   },
+           filter: function (value) { // optional
+               var num = parseFloat(value);
+               return num && !isNaN(num) ? num.toFixed(1) : value;
+            }
+		},
+
+		{
+		   position: [2.95, 1.90],
+		   width: 0.5,
+		   height: 0.30,
+		   title: 'baseball',
+		   subtitle: '',
+		   type: TYPES.SENSOR,
+           state: false,
+		   id: 'sensor.baseballroomconditions',
 		   value: function(item, entity){
 		      return entity.state;
 		   },
